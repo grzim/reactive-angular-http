@@ -1,0 +1,32 @@
+<div>
+    <div>
+        <button (click)="uiErrorEmitter('aaa')"> emit error</button>
+    </div>
+    <div>
+        <button (click)="setAaaEmitter('aaa')"> set local storage aaa</button>
+    </div>
+    <div>
+        <button (click)="deleteAaaEmitter()"> delete local storage aaa</button>
+    </div>
+    Local storage 'aaa': {{ aaa$ | async }}
+    <div>
+        <button (click)="getEmitter()"> emit get</button>
+    </div>
+    <div>
+        <button (click)="putEmitter({id: 4, a: 3})"> emit put</button>
+    </div>
+    <div>
+        <button (click)="deleteEmitter({id: 5})"> emit delete</button>
+    </div>
+    <div>
+        <button (click)="postEmitter({id: 6, a: 4})"> emit post</button>
+    </div>
+    <div>
+        <button (click)="patchEmitter({id: 6, a: 4})"> emit patch</button>
+    </div>
+    Server data: {{ serverData$ | async | json }}
+    <div>
+        Errors:
+        <app-data-and-error-output></app-data-and-error-output>
+    </div>
+</div>
